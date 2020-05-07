@@ -2407,3 +2407,16 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+
+/* SNAPPLIFY START */
+html[dir='ltr'] .toolbarButton#documentClose::before {
+  content: url(images/secondaryToolbarButton-documentClose.png);
+  top: 0;
+  left: 3px;
+}
+html[dir='rtl'] .toolbarButton#documentClose::before {
+  content: url(images/secondaryToolbarButton-documentClose.png);
+  top: 0;
+  left: 3px;
+}
+/* SNAPPLIFY END*/
