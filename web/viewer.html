@@ -30,6 +30,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 
   <link rel="stylesheet" href="viewer.css">
+  <link href="../../../assets/viewer.css" rel="stylesheet"/>
 
 
   <!-- This snippet is used in production (included from viewer.html) -->
@@ -204,22 +205,22 @@ See https://github.com/adobe-type-tools/cmap-resources
                 <span id="numPages" class="toolbarLabel"></span>
               </div>
               <div id="toolbarViewerRight">
-                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode" style="display: none;">
                   <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
                 </button>
 
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file" style="display: none;">
                   <span data-l10n-id="open_file_label">Open</span>
                 </button>
 
-                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print" style="display: none;">
                   <span data-l10n-id="print_label">Print</span>
                 </button>
 
-                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download" style="display: none;">
                   <span data-l10n-id="download_label">Download</span>
                 </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark" style="display: none;">
                   <span data-l10n-id="bookmark_label">Current View</span>
                 </a>
                 <!-- SNAPPLIFY START -->
@@ -244,12 +245,6 @@ See https://github.com/adobe-type-tools/cmap-resources
                   <span data-l10n-id="journal_label">Journal</span>
                 </button>
 
-                <!--
-                <button id="clearHighlightTool" class="toolbarButton clearHighlightTool" title="Clear highlight" tabindex="17" data-l10n-id="clear_highlight">
-                  <span data-l10n-id="clear_highlight_label">Clear Highlight</span>
-                </button>
-                -->
-
                 <button id="toggleNotesTool" class="toolbarButton toggleNotes" title="Notes" tabindex="17" data-l10n-id="notes">
                   <span data-l10n-id="notes_label">Notes</span>
                 </button>
@@ -257,12 +252,10 @@ See https://github.com/adobe-type-tools/cmap-resources
 
                 <div class="verticalToolbarSeparator hiddenSmallView"></div>
 
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools">
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36" data-l10n-id="tools" style="display: none;">
                   <span data-l10n-id="tools_label">Tools</span>
                 </button>
                 <!-- SNAPPLIFY START -->
-                <div class="verticalToolbarSeparator hiddenSmallView" style="display: none;"></div>
-
                 <button id="documentClose" class="toolbarButton" title="Close document" tabindex="28" data-l10n-id="document_close">
                   <span data-l10n-id="document_close_label">Close document</span>
                 </button>
@@ -320,6 +313,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
         <div id="viewerContainer" tabindex="0">
           <div id="viewer" class="pdfViewer"></div>
+          <div id="snappPopoverContainer"></div>
         </div>
 
         <div id="errorWrapper" hidden='true'>
@@ -424,6 +418,25 @@ See https://github.com/adobe-type-tools/cmap-resources
           </div>
         </div>
       </div>  <!-- overlayContainer -->
+
+      <!-- SNAPPLIFY START -->
+      <div id="noteOverlayContainer" class="hidden">
+
+        <div id="noteInputContainer" class="hidden">
+          <div id="noteInnerContainer">
+            <div id="noteTextContainer">
+              <textarea id="noteInputText"></textarea>
+            </div>
+            <div id="noteInputButtons">
+              <button style="float: left;" id="noteInputContainerOk">OK</button>
+              <span style="line-height: 24px; margin-left: 1em; color: #999;">Shortcut: &quot;ctrl + enter&quot;</span>
+              <button style="float: right;" id="noteInputContainerCancel">CANCEL</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- SNAPPLIFY END -->
 
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
