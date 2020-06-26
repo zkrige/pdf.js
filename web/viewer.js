@@ -1146,7 +1146,10 @@ const PDFViewerApplication = {
           }
 
           if (spreadMode === _ui_utils.SpreadMode.UNKNOWN) {
-            spreadMode = stored.spreadMode | 0;
+            //SNAPPLIFY
+            //spreadMode = stored.spreadMode | 0;
+            //forced spreadMode
+            spreadMode = 0;
           }
         }
 
