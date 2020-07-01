@@ -411,13 +411,21 @@ See https://github.com/adobe-type-tools/cmap-resources
       const xhr= new XMLHttpRequest();
       xhr.open('GET', '../../../assets/readium/templates/reader-find.html', true);
       xhr.onreadystatechange= function() {
-        if (this.readyState!==4) return;
-        if (this.status!==200) return; // or whatever error handling you want
+        if (this.readyState!==4) {
+          return;
+        }
+        if (this.status!==200) {
+          return; // or whatever error handling you want
+        }
         document.getElementById('findbarHolder').outerHTML = this.responseText;
+
+        //load the viewer.js script AFTER the template has been injected
+        const script = document.createElement('script');
+        script.src = "viewer.js";
+        document.body.appendChild(script);
       };
       xhr.send();
     </script>
-    <script src="viewer.js"></script>
 
   </body>
 </html>
