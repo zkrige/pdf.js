@@ -31,6 +31,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
   <link rel="stylesheet" href="viewer.css">
   <link href="../../../assets/css/viewer.css" rel="stylesheet"/>
+  <link href="../../../assets/css/findbar.css" rel="stylesheet"/>
 
 
   <!-- This snippet is used in production (included from viewer.html) -->
@@ -409,7 +410,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     <script>
       //    <!-- snapplify 2020-06-30 -->
       const xhr= new XMLHttpRequest();
-      xhr.open('GET', '../../../assets/readium/templates/reader-find.html', true);
+      xhr.open('GET', '../../../assets/templates/findbar/reader-find.html', true);
       xhr.onreadystatechange= function() {
         if (this.readyState!==4) {
           return;
