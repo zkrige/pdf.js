@@ -1372,6 +1372,7 @@ html[dir="rtl"] #viewOutline.toolbarButton::before {
 
 #viewFind.toolbarButton::before {
   content: url(images/toolbarButton-search.png);
+  background-size: 28px !important;
 }
 
 .toolbarButton.pdfSidebarNotification::after {
@@ -2191,6 +2192,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   #viewFind.toolbarButton::before {
     content: url(images/toolbarButton-search@2x.png);
+    background-size: 28px !important;
+    transform: scale(0.8);
   }
 
   .secondaryToolbarButton.firstPage::before {
